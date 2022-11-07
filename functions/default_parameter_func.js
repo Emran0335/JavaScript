@@ -70,4 +70,4 @@ console.log("My Age: ", arrow_calculateAge(1988));
 
 const arrowWeightOfObject = (mass, gravity = 9.81) => mass * gravity + "N"
 console.log("Weight of an object in Newton: ", arrowWeightOfObject(70)); // 9.81 gravity on the surface of the earth.
-console.log("Weight of an object in Newton: ", arrowWeightOfObject(70, 1.62)); // 1.62 gravity on the surface of the moon
+console.log("Weight of an object in Newton: ", arrowWeightOfObject(70, 1.62)); // 1.62 gravity on the surface of the moon.
