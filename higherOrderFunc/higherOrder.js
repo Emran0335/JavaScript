@@ -30,7 +30,7 @@ const higherOrderReturn = n => {
 console.log(higherOrderReturn(2)(3)(10)); // 2*2 + 3*3 + 10 = 23
 
 // Let us use callback functions
-// forEach(): 
+// forEach():
 const forEachNumbers = [1,2,3,4,5]
 const sumOfnumbers = arr => {
     let sum = 0
@@ -68,9 +68,7 @@ function callback() {
 }
 setInterval(callback, duration)
 */
-
-
-
-
-
-
+function sayHello() {
+    console.log("Hello");
+}
+setTimeout(sayHello, 2000) // it will print hello after wainting for 2 seconds.
