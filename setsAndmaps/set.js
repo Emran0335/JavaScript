@@ -85,3 +85,54 @@ for (const language of langSet) {
     counts.push({lang: language, count:filteredLang.length})
 }
 console.log(counts);
+
+// other use case of set. For instance to count unique item in an array.
+
+const numbersRandom = [5, 3, 2, 5, 5, 9, 4, 5]
+const setOfnumbersRandom = new Set(numbersRandom)
+console.log(setOfnumbersRandom); // Set(5) {5,3,2,9,4}
+
+
+// Union of sets
+// A union of two sets can be achieved using spread operator(...spread operator). Let us find the union of set A and set B (AUB)
+
+let a = [1, 2, 3, 4, 5]
+let b = [3, 4, 5, 6]
+let c = [...a, ...b]
+console.log(c); // [1,2,3,4,5,6]
+let A = new Set(a)
+let B = new Set(b)
+let C = new Set(c)
+console.log(A); // object, Set(5) {1,2,3,4,5}
+console.log(B); // object, Set(4) {3,4,5,6}
+console.log(C); // object, Set(6) {1,2,3,4,5,6}
+
+
+// Intersection of sets ->D∩E
+// an intersetion of two sets can be achieved using filter. Let us find the intersection of set D and set E (D∩E)
+
+let d = [1, 2, 3, 4, 5]
+let e = [3, 4, 5, 6]
+
+let D = new Set(a)
+let E = new Set(e)
+
+let intersection = d.filter((num) => E.has(num)) // filter is an array method whereas has is a set method. As E set has 3,4,5 which are same in the d array. So, it will return [3,4,5,].
+console.log(intersection); // [3,4,5]
+let intersectionSet = new Set(intersection) // here, array is changed into set.
+console.log(intersectionSet);
+
+
+// Difference of sets
+// the difference between two sets can be achieved using filter method of array. Let's find the difference of set A and set B (A\B) or (A-B).
+
+let x = [1, 2, 3, 4, 5]
+let y = [3, 4, 5, 6]
+
+let X = new Set(x)
+let Y = new Set(y)
+
+let differenceOfArray = x.filter((num) => !Y.has(num)) //has method of set returns false. So, it will return 1,2 as they are not in the set Y.
+let differenceOfSet = new Set(differenceOfArray)
+console.log(differenceOfSet); // Set(2) {1,2}
+
