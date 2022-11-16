@@ -15,6 +15,8 @@ const numbers = [9.81, 3.14, 100, 37]
 // using sort method to sort number items of the given array will provide a wrong result, see below.
 console.log(numbers.sort()); // [ 100, 3.14, 37, 9.81 ]
 
+// compare function takes two parameter like (a, b). If (a - b) returns negative result(-1), a will be sorted first. If (a - b) returns positive result, b will be sorted first.
+
 // fix this problem, we will use a callback function.
 numbers.sort(function (a, b) {
     return a - b;
@@ -32,6 +34,8 @@ console.log(numbers); // [ 100, 37, 9.81, 3.14 ]
 
 // As sort() sorts the array in its palce automatically according to the unicode sign from a to z(a to z), it is needed to pass compareFunc as parameter to get exact or expected result of the array of numbers. If compareFunc takes (a and b) as parameters and returns positive one(e.i. a-b = positive number), b will be sorted first before a. If the function returns negative(e.i. a-b = negative number), a will be sorted first before b. It it returns zero, it will be sorted originally by default.
 
+
+// Comparison function takes two parameters like a and b. If a < b is true and return value is given negativ(-1) one, a will be sorted first than b. If a > b is true and return value is given positive (1) one, b will be sorted first than a. But, when return value is 0, it will sort as acsending order of UNICODE sign(string).
 /*
 objArr.sort(function(a, b) {
     if (a.key < b.key) return -1 //if true, a will be sorted first.
