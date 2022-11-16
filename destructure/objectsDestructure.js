@@ -77,18 +77,43 @@ const person = {
 
 const getPersonInfo = (obj) => {
   const skills = obj.skills;
-  const formattedSkills = skills.slice(0, -1).join(" ,");
+  const formattedSkills = skills.slice(0, -1).join(" ,"); // -1(not included, so python is omitted.)
   const languages = obj.languages;
   const formattedLanguages = languages.slice(0, -1).join(",");
 
-  personInfo = `${obj.firstName} ${obj.lastName} lives in ${
+  const personInfo = `${obj.firstName} ${obj.lastName} lives in ${
     obj.country
-  }. He is  ${obj.age} years old. He is an ${
+  }. He is  ${obj.age} years old. He is a ${
     obj.job
   }. He teaches ${formattedSkills} and ${
     skills[skills.length - 1]
-  }. He speaks ${formattedLanguages} and a little bit of ${languages[2]}.`;
-
+  }. He speaks ${formattedLanguages} and ${languages[1]} fluently.`;
   return personInfo;
 };
 console.log(getPersonInfo(person));
+
+// Destructuring Object During Iteration
+const todoList = [
+  {
+    task: "Prepare JS Test",
+    time: "8/10/2020 8:30",
+    completed: true,
+  },
+  {
+    task: "Give JS Test",
+    time: "8/10/2020 10:00",
+    completed: false,
+  },
+  {
+    task: "Assesss JS Test",
+    time: "8/10/2020 1:00",
+    completed: false,
+  },
+];
+
+for (const { task, time, completed } of todoList) {
+    console.log(task, time, completed);
+}
+/*Prepare JS Test 8/10/2020 8:30 true
+Give JS Test 8/10/2020 10:00 false
+Assesss JS Test 8/10/2020 1:00 false */
