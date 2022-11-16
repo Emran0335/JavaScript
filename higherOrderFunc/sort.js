@@ -144,7 +144,7 @@ sorted acsending
 
 constantsValueArrayObj.sort((a, b) => {
     if (a.point < b.point) {
-        return -1 // a will be sorted first(as 3.14 < 9.81 is false.)
+        return -1 // a will be sorted first(as 3.14 < 9.81 is true.)
     } else if(a.point > b.point) {
         return 1 // b will be sorted first
     } else {
@@ -160,3 +160,51 @@ console.log(constantsValueArrayObj);
 ]*/
 console.log(Boolean(-1) == true); // true
 console.log(Boolean(0) == true); // false
+
+// another example:
+const arrayObjAscending = [
+    { name: 'Gravity', point: 9.81 },
+    { name: 'Boiling Point', point: 100 },
+    { name: 'Body Temperature', point: 37 },
+    { name: 'PI', point: 3.14 },
+]
+console.log(arrayObjAscending.sort());
+arrayObjAscending.sort((a, b) => {
+    if (a.point > b.point) {
+        return 1 // here 1 is positive value, so b will be storted first. 3.14<9.81 is false.
+    } else if (a.point < b.point) { // as it is true
+        return -1 // this code will run and a will be sorted first
+    } else {
+        return 0
+    }
+})
+console.log(arrayObjAscending);
+/*[
+  { name: 'PI', point: 3.14 },
+  { name: 'Gravity', point: 9.81 },
+  { name: 'Body Temperature', point: 37 },
+  { name: 'Boiling Point', point: 100 }
+]*/
+
+const arrayObjDescending =[
+    { name: "Body Temperature", point: 37 },
+    { name: "PI", point: 3.14 },
+    { name: "Boiling Point", point: 100 },
+    { name: "Gravity", point: 9.81 },
+]
+arrayObjDescending.sort((a, b) => {
+    if (a.point < b.point) { // 37 and 3.14 are compared, a is bigger than b. So, I want to sort a first than b. But the condition is not true and code will not run. That is why I put return value 1. So, the code will work on b as the return value is positive.
+        return 1
+    } else if (a.point > b.point) { // 37 and 3.14 are compared, a is bigger than b. So, I want to sort a first and the condition is true. So, the code will run. That is why I put return value is -1(negative) so that a will be sorted first.
+        return -1
+    } else {
+        return 0
+    }
+})
+console.log(arrayObjDescending);
+/*[
+  { name: 'Boiling Point', point: 100 },
+  { name: 'Body Temperature', point: 37 },
+  { name: 'Gravity', point: 9.81 },
+  { name: 'PI', point: 3.14 }
+]*/
