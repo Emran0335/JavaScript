@@ -92,6 +92,8 @@ const getPersonInfo = (obj) => {
 };
 console.log(getPersonInfo(person));
 
+
+
 // Destructuring Object During Iteration
 const todoList = [
   {
