@@ -7,7 +7,7 @@
 
 // Defining a Classes
 
-// To define a class in JavaScript, we need the keyword class. The name of a class in CamelCase and block code(two curly brackets). Let us create a class name Person.
+// To define a class in JavaScript, we need the keyword class. The name of a class in CamelCase and starts with Capital letter and block code(two curly brackets). Let us create a class name Person.
 
 /*
 syntax
@@ -110,4 +110,3 @@ const personWithDefaultValue = new PersonClassWithDefaultValue() // it will take
 console.log(personWithDefaultValue); // PersonClassAgain {firstName: 'Emran',lastName: 'Hossain', age: 34,country: 'Bangladesh', city: 'Dhaka'}
 const personWithGivenValue = new PersonClassWithDefaultValue('Asraful', 'Alam', 28, 'Bangladesh', 'Dhaka')
 console.log(personWithGivenValue); //PersonClassWithDefaultValue{firstName: 'Asraful', lastName: 'Alam', age: 28, country: 'Bangladesh',city: 'Dhaka'}
-
