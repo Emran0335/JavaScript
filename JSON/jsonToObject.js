@@ -148,22 +148,104 @@ const usersTextasJSON = `{
             "fisrtName" : "Emran",
             "lastName" : "Hossain",
             "age" : 32,
-            "email" : "emranhossain0335@gmail.com
-        }
+            "email" : "emranhossain0335@gmail.com"
+        },
         {
             "fisrtName" : "Mahbub",
             "lastName" : "Alam",
             "age" : 41,
-            "email" : "mahbubalam@gmail.com
-        }
+            "email" : "mahbubalam@gmail.com"
+        },
         {
             "fisrtName" : "Ruhul",
             "lastName" : "Amin",
             "age" : 40,
-            "email" : "ruhulamin@gmail.com
+            "email" : "ruhulamin@gmail.com"
         }
     ]
 }`;
 
-const userObject = JSON.parse(usersTextasJSON, undefined, 4)
+const userObject = JSON.parse(usersTextasJSON, undefined, 4);
 console.log(userObject);
+/*
+{
+  users: [
+    {
+      fisrtName: 'Emran',
+      lastName: 'Hossain',
+      age: 32,
+      email: 'emranhossain0335@gmail.com'
+    },
+    {
+      fisrtName: 'Mahbub',
+      lastName: 'Alam',
+      age: 41,
+      email: 'mahbubalam@gmail.com'
+    },
+    {
+      fisrtName: 'Ruhul',
+      lastName: 'Amin',
+      age: 40,
+      email: 'ruhulamin@gmail.com'
+    }
+  ]
+}
+*/
+
+// Using a reviver function(a callback function) with JSON.parse().
+// To use the reviver function as a formatter, we put the keys that we want to format firstName and lastName value. Let us say, we are interested to format the firstName and lastName of the JSON data.
+
+const usersJSONText = `{
+    "users": [
+        {
+            "fisrtName" : "Emran",
+            "lastName" : "Hossain",
+            "age" : 32,
+            "email" : "emranhossain0335@gmail.com"
+        },
+        {
+            "fisrtName" : "Mahbub",
+            "lastName" : "Alam",
+            "age" : 41,
+            "email" : "mahbubalam@gmail.com"
+        },
+        {
+            "fisrtName" : "Ruhul",
+            "lastName" : "Amin",
+            "age" : 40,
+            "email" : "ruhulamin@gmail.com"
+        }
+    ]
+}`;
+
+const userJSONtoObjectWithReviver = JSON.parse(usersJSONText, (key, value) => {
+    let newValue = typeof value === 'string' && key != 'email' ? value.toUpperCase() : value
+    return newValue
+})
+console.log(userJSONtoObjectWithReviver);
+/*
+{
+  users: [
+    {
+      fisrtName: 'EMRAN',
+      lastName: 'HOSSAIN',
+      age: 32,
+      email: 'emranhossain0335@gmail.com'
+    },
+    {
+      fisrtName: 'MAHBUB',
+      lastName: 'ALAM',
+      age: 41,
+      email: 'mahbubalam@gmail.com'
+    },
+    {
+      fisrtName: 'RUHUL',
+      lastName: 'AMIN',
+      age: 40,
+      email: 'ruhulamin@gmail.com'
+    }
+  ]
+}
+*/
+
+// The JSON.parse() is very handy to use. We don't have to pass optional parameter. We can just use it with the required parameter and we will achieve quite a lot.
