@@ -110,3 +110,4 @@ const personWithDefaultValue = new PersonClassWithDefaultValue() // it will take
 console.log(personWithDefaultValue); // PersonClassAgain {firstName: 'Emran',lastName: 'Hossain', age: 34,country: 'Bangladesh', city: 'Dhaka'}
 const personWithGivenValue = new PersonClassWithDefaultValue('Asraful', 'Alam', 28, 'Bangladesh', 'Dhaka')
 console.log(personWithGivenValue); //PersonClassWithDefaultValue{firstName: 'Asraful', lastName: 'Alam', age: 28, country: 'Bangladesh',city: 'Dhaka'}
+
