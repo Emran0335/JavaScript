@@ -51,3 +51,39 @@ console.log(personAgain2.score); // 0
 
 console.log(personAgain1.skills); // []
 console.log(personAgain2.skills); // []
+
+
+// getter
+// The (get) method allows us to access value from the object. We write a get method using keyword (get) followed by a function. Instead of accessing properties directly from the object, we use getter to get the value. See the example below.
+
+class PersonOnceAgain {
+    constructor(fisrtName, lastName, age, country, city) {
+        this.fisrtName = fisrtName
+        this.lastName = lastName
+        this.age = age
+        this.country = country
+        this.city = city
+        this.score = 0
+        this.skills = []
+    }
+
+    getFullNameAgain() {
+        const fullNameAgain = this.fisrtName + " " + this.lastName
+        return fullNameAgain
+    }
+    get getScore() { // this getScore is a getter method
+        return this.score
+    }
+    get getSkills() {
+        return this.skills
+    }
+}
+
+const personOnceAgain1 = new PersonOnceAgain('Emran', 'Hossain', 30, 'Bangladesh', 'Dhaka')
+const personOnceAgain2 = new PersonOnceAgain('Ruhul', 'Amin', 40, 'Bangladesh', 'Dhaka')
+
+console.log(personOnceAgain1.getScore); //0, do not need to use parenthesis to call a getter method.
+console.log(personOnceAgain2.getScore); //0, do not need to use parenthesis to call a getter method.
+
+console.log(personOnceAgain1.getSkills); //[], do not need to use parenthesis to call a getter method.
+console.log(personOnceAgain2.getSkills); //[], do not need to use parenthesis to call a getter method.
