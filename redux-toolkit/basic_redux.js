@@ -10,12 +10,12 @@ const initialCounterState = {
 };
 
 // actions -> Object-type, payload
-const incrementCounter = () => {
+const incrementCounterAction = () => {
   return {
     type: INCREMENT,
   };
 };
-const decrementCounter = () => {
+const decrementCounterAction = () => {
   return {
     type: DECREMENT,
   };
@@ -58,11 +58,11 @@ store.subscribe(() => {
 })
 
 // Now, we have to dispatch action. Here, action is an object-> {type: INCREMENT, payload}
-store.dispatch(incrementCounter()) // result = {count: 1}, {type:INCREMENT} = incrementCounter()
-store.dispatch(incrementCounter()); // result = {count: 2}
-store.dispatch(incrementCounter()); // result = {count: 3}
-store.dispatch(decrementCounter()); // result = {count: 2}
-store.dispatch(decrementCounter()); // result = {count: 1}
-store.dispatch(decrementCounter()); // result = {count: 0}
+store.dispatch(incrementCounterAction()) // result = {count: 1}, {type:INCREMENT} = incrementCounter()
+store.dispatch(incrementCounterAction()); // result = {count: 2}
+store.dispatch(incrementCounterAction()); // result = {count: 3}
+store.dispatch(decrementCounterAction()); // result = {count: 2}
+store.dispatch(decrementCounterAction()); // result = {count: 1}
+store.dispatch(decrementCounterAction()); // result = {count: 0}
 
 // incrementCounter -> type:ICREMENT -> store -> counterReducer-> action.type->done-> store.subscribe()-> console.log -> getState() -> state as result.
