@@ -46,3 +46,5 @@ store.subscribe(() => {
 // send action to the userReducer through dispatch() method.
 
 store.dispatch(addUsersAction("Hossain")); // { users: [ 'Emran', 'Hossain' ], count: 2 }
+store.dispatch(addUsersAction("Ruhul")); // { users: [ 'Emran', 'Hossain', 'Ruhul' ], count: 3 }
+store.dispatch(addUsersAction("Amin")); // { users: [ 'Emran', 'Hossain', 'Ruhul', 'Amin' ], count: 4 }
