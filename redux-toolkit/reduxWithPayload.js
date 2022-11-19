@@ -8,25 +8,25 @@ const { createStore } = require("redux");
 // 1. initial state -> it should be an object.
 
 const initialState = {
-  user: ["Emran"],
+  users: ["Emran"],
   count: 1,
 };
 
 // 2. action
 // constants
-const INCREMENT_USER = "INCREMENT_USER";
-const incrementUserAction = (user) => {
+const ADD_USERS = "ADD_USERS";
+const addUsersAction = (user) => {
   return {
-    type: INCREMENT_USER,
+    type: ADD_USERS,
     payload: user,
   };
 };
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case INCREMENT_USER:
+    case ADD_USERS:
       return {
-        user: [...state.user, action.payload],
+        users: [...state.users, action.payload],
         count: state.count + 1,
       };
 
@@ -45,4 +45,4 @@ store.subscribe(() => {
 
 // send action to the userReducer through dispatch() method.
 
-store.dispatch(incrementUserAction("Hossain")); // { user: [ 'Emran', 'Hossain' ], count: 2 }
+store.dispatch(addUsersAction("Hossain")); // { users: [ 'Emran', 'Hossain' ], count: 2 }
