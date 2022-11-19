@@ -1,3 +1,5 @@
+// If we want to use redux-toolkit, we have to install npm -y and redux in the file.
+
 const { createStore } = require("redux");
 
 // defining constants
