@@ -100,3 +100,60 @@ const doPromiseWithReject = new Promise((resolve, reject) => {
 doPromiseWithReject
     .then(result => console.log(result))
     .catch(error => console.log(error))
+
+
+// Fetch API
+// The Fetch API provides an interface for fetching resources (including across the network). It will seem familiar to anyone who has used XMLHttpRequest, but the new API provides a more powerful and flexible feature set. In this challenge, we will use fetch() to request url and APIs. In addition to that, let us see demonstrate use case of promises in accessing network resources using tha fetch API
+
+const URL = 'https://restcountries.com/v2/all' // countries api
+fetch(URL)
+    .then(response => response.json()) // accessing the API data as JSON
+    .then(data => {
+        console.log(data); // data will appear in browser console
+    })
+    .catch(error => console.log(error.message));
+
+
+// Async and Await
+// Async and await is an elegant way to handle promises. It is easy to understand and clean to write.
+
+const square = async function (n) {
+    return n * n;
+}
+// square(2), the result is Promise{<resolved>: 4}
+console.log(square(2)) // Promise {<fulfilled>: 4} is shown in browser console.
+
+// The word async in front of a function means that function will return a promise. The above sequare function instead of a value it returns a promise.
+
+// How do we access the value from the promise? To access the value from the promise, we will use the keyword await.
+
+const squareWithAwait = async function (n) {
+    return n * n
+}
+const value = await squareWithAwait(3); // it does not work as await is used inside async function.
+console.log(value)
+
+// Now, as you can see from the above example writing async in front of a function create a promise and to get the value from a promise we use await. Async and await go together, one can not exist without the other.
+
+// Let us fetch API data using both promise method and async and await method.
+
+// promise
+const url = 'https://restcountries.com/v2/all'
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+  })
+  .catch(error => console.error(error))
+// async and await
+const fetchData = async () => {
+  try {
+    const response = await fetch(url)
+    const countries = await response.json()
+    console.log(countries)
+  } catch (err) {
+    console.error(err)
+  }
+}
+console.log('===== async and await')
+fetchData()
