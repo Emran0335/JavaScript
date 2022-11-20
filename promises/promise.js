@@ -133,7 +133,7 @@ const squareWithAwait = async function (n) {
 const value = await squareWithAwait(3); // it does not work as await is used inside async function.
 console.log(value)
 
-// Now, as you can see from the above example writing async in front of a function create a promise and to get the value from a promise we use await. Async and await go together, one can not exist without the other.
+// Now, as we can see from the above example writing async in front of a function create a promise and to get the value from a promise we use await. Async and await go together, one can not exist without the other.
 
 // Let us fetch API data using both promise method and async and await method.
 
