@@ -45,3 +45,32 @@ console.log(countriesFirstThreeLetters);
 ]
 */
 
+ let addTwo = (a, b) => a + b;
+ let mulTwo = (a, b) => a * b;
+ let subTwo = (a, b) => a - b;
+
+const hexaColor = () => {
+  let str = "0123456789abcdef";
+  let color = "";
+  for (let i = 0; i < 6; i++) {
+      let index = Math.floor(Math.random() * str.length);
+      console.log(index);
+
+    color += str[index];
+  }
+  return color;
+};
+console.log(hexaColor());
+
+const num = Math.floor(Math.random() * 16)
+console.log(num);
+
+
+const obj = {
+    fisrtName: 'Emran',
+    lastName: "Hossain"
+}
+console.log(typeof obj);
+const month = new Date();
+const getMonth = month.getMonth();
+console.log(getMonth); // it returns integer as month begins with index 0(January) to index 11(December).
