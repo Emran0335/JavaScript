@@ -1,7 +1,5 @@
 // for in loop in object....
 
-
-
 const skills = {
   html: false,
   css: false,
