@@ -45,3 +45,17 @@ for (const tech of webTechs) {
     console.log(tech[0].toLowerCase());
 }
 
+
+const skills = {
+    html: false,
+    css: false,
+    javascript: false
+}
+
+const formatted = [];
+for (const key in skills) {
+    console.log(key.toUpperCase()); //HTML CSS JAVASCRIPT;
+    formatted.push(key.toUpperCase())
+}
+
+console.log(formatted); // [ 'HTML', 'CSS', 'JAVASCRIPT' ]
