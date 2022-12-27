@@ -1,4 +1,4 @@
-// Arrays 
+// Arrays
 
 // In contrast to vaiables, an array can store multiple values. Each value in an array has an index. And each index has a reference in a memory address. Each value can be accessed  by using their index. The index of an array starts from zero, and the index  of the last element of the  array is array.length - 1 i.e. the last element of the array less by one from the length of the array.
 
@@ -188,6 +188,9 @@ console.log(arrayNamesJoin.join("")); //EmranHossainSadifaNusaiba
 console.log(arrayNamesJoin.join(" ")); // Emran Hossain Sadifa Nusaiba
 console.log(arrayNamesJoin.join(", "));
 console.log(arrayNamesJoin.join(" # "));
+// join(",") changes two element of array into -> Inter, sans-serif
+const fontFamily = ["Inter", "sans-serif"].join(",");
+console.log("FontFamily: ", fontFamily);
 
 
 
@@ -227,7 +230,7 @@ console.log(numbersPush) // [1,2,3,4,5,6]
 
 // pop(): is an another array method to remove item from the end of the array.
 const numbersPop = [1,2,3,4,5,6]
-numbersPop.pop() 
+numbersPop.pop()
 console.log(numbersPop) //[1,2,3,4,5], it will remove the last item 6 from the array.
 
 // shift(): removing one array element from the beginning of the given array.
@@ -283,30 +286,3 @@ console.log(fullStack) // [[ 'HTML', 'CSS', 'JS','React', 'Redux' ], [ 'Node', '
 console.log(fullStack.length) // 2, it has two arrays inside of it.
 console.log(fullStack[0]) // [ 'HTML', 'CSS', 'JS', 'React', 'Redux' ],
 console.log(fullStack[1]) // [ 'Node', 'Express', 'MongoDB' ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
