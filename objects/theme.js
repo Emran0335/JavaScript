@@ -190,3 +190,12 @@ const themeSettings = (mode) => {
 
 const themeResult = themeSettings(tokensDark);
 console.log(themeResult); // as mode === "dark" is not recognised, light mode will be printed....
+
+const colorPalette = ( mode, color = { primary: "#ffffff", secondary: "#000000" }) => {
+    const findColor = mode == "dark" ? console.log(color.primary) : console.log(color.secondary);
+    return findColor;
+};
+
+// const paletteResult = colorPalette("dark")
+colorPalette("light") // #000000
+colorPalette("dark") // #ffffff
