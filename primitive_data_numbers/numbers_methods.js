@@ -88,3 +88,4 @@ if (myVar === null) {
   console.log("myVar is compared"); // it will not printed
 }
 
+

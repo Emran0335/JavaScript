@@ -21,3 +21,19 @@ const namesWithScores = [
 const scoreWithFind = namesWithScores.find((nameScore) => nameScore.score > 80)
 console.log(scoreWithFind); //{ name: 'Emran', score: 95 }
 
+// it returns object from an array but filter returns new array of a given array.
+const func=(funcPara, name='default')=> {
+  let arrObj = [
+      {backgroungColor: '#fff', color: '#000', name: 'default'},
+      {backgroungColor: '#000', color: '#fff', name: 'info'},
+      {backgroungColor: '#FF0000', color: '#fff', name: 'button'},
+  ];
+
+  let {backgroungColor,color} = arrObj.find((obj)=> obj.name === name);
+  return funcPara(backgroungColor, color);
+}
+let newFunc =(backgroungColor, color)=>`${backgroungColor} and ${color}`
+
+let gainResult = func(newFunc, 'button')
+console.log(gainResult);
+

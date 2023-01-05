@@ -494,6 +494,9 @@ In this example, the useInterval hook is called with a function that updates the
 
 The useInterval hook can be useful for creating animations, polling for data, or any other use case where you want to run a function at a regular interval.
 */
+const pathname = "deshboard"
+console.log(pathname.substring(0,3)); // des
+console.log(pathname.substring(1)); // eshboard(0 index is not included but the rest will be included) 
 
 
 

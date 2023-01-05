@@ -1,12 +1,9 @@
-//charAt() takes index(number) and it returns the value at that index
+// includes() -> 
 
-// String.charAt(index)
+const string = "Love is the best way to conquer anything in the world"
 
-let string = "30 Days of JavaScript"
+console.log(string.includes("way")); // true
+console.log(string.includes("Love")); // true
+console.log(string.includes("love")); // false
 
-console.log(string.charAt(0)); //3
-console.log(string.charAt(2)); // empty space
 
-let lastIndex = string.length - 1
-
-console.log(string.charAt(lastIndex)); //t

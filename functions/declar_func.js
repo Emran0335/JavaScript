@@ -1,4 +1,4 @@
-//Funcion Declaration
+//Function Declaration
 
 //Let us see how to declare a function and how to call a function
 
@@ -16,10 +16,10 @@
 // function without parameter, a function which make a number square
 function square() {
     let num = 2
-    let sq = num * num
-    console.log(sq);
+    let sq = num * num;
+    return sq;
 }
-square()
+square() // calling the function / invoking the function
 
 
 function addTwoNumbers() {
