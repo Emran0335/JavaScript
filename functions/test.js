@@ -35,3 +35,19 @@ const defaultParameter = (n = 8) => {
 };
 console.log(defaultParameter()); // 18
 console.log(defaultParameter(10)); // 10 + 10 = 20
+
+
+const add =(num1, num2)=> {
+  return num1 + num2
+}
+
+const multiply=(num1, num2)=> {
+  return num1 * num2
+}
+
+const calculator=(x, y, operator)=> {
+  return operator(x, y);
+}
+
+console.log(calculator(3, 4, add)); // 7
+console.log(calculator(3,4, multiply)); // 12
