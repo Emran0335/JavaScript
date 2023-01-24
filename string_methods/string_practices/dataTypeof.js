@@ -21,3 +21,35 @@ console.log(typeof(job)); // undefined
 console.log(typeof(undefined)); // undefined
 console.log(typeof (null)); // object
 console.log(typeof "Hossain"); //string
+
+
+function okay() {
+    const get = function anohter() {
+      return null
+    }
+    return get
+  }
+  
+console.log(typeof okay()); // function
+
+
+var car = {
+    make: "Toyota",
+    model: "Camry",
+    print: function () {
+        console.log(this.make + " " + this.model);
+    }
+};
+// const getTypeof = car[print]
+console.log(typeof car.print); // function
+console.log(typeof car["print"]); // function
+
+for (var prop in car) {
+    if (typeof car[prop] !== "function") {
+        console.log(prop);         // => make, and model
+    }
+}
+
+
+
+

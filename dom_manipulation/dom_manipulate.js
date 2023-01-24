@@ -22,3 +22,6 @@ heading.innerText = 'JavaScript'
 
 var para = document.querySelector('p');
 para.innerHTML = 'Hi'
+
+
+
