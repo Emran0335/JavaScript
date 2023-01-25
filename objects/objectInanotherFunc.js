@@ -127,11 +127,71 @@
     }
   };
 
-  for (var prop in car) {
+  for (var prop in car) {   // for ... in (loop)
     if(typeof car[prop] !== "function") {
       console.log(prop);                   // make, and model
     }
   }
+
+  Be aware that the order in which the properties are returned by a for-in loop is not guaranteed. If order is important you will need to manage your own list of properties (probably as an internal array).
+
+
+// Deleting Properties
+04. Deleting Properties
+
+  Use the delete operator to remove a property from an object, like so:
+  
+  var circle = {radius: 8};
+  console.log(circle.radius);           // 8
+  console.log(delete circle.radius);    // true
+  console.log(circle.radius);           // undefined
+
+
+
+// Constructor Ffunctions
+05. Constructor Ffunctions
+
+  Object literal notation, such as var x = {}, is preferred if all you need is a single object and there is no need for multiple instances. However, if you need multiple instances, it is better to use a constructor function. Here is an example of a book constructor function.
+
+  function Book(isbn) {
+    this.isbn = isbn;
+    this.getIsbn = function() {
+      return "Isbn is " + this.isbn;
+    }
+  }
+
+  Properties, including methods, are assigned to the 'this' value in the function's body. In the above example a property and a function are assigned. Also notice that this function is capitalized (i.e. Book); constructor functions are capitalized by convention in JavaScript
+
+  To create a new object with this function you use the new operator followed by a function invocation. A function that is invoked this way is called a constructor function whose main purpose is to create and initialize a new object. Here we are creating a new book object:
+
+  function Book(isbn) {
+    this.isbn = isbn;
+    this.getIsbn = function () {
+        return "Isbn is " + this.isbn;
+    };
+  }
+
+  var book = new Book("901-3865");
+
+  console.log(book.getIsbn());    // => Isbn is 901-3865
+
+  When new Book() is invoked, JavaScript creates a new empty Object and sets an internal property which specifies that the new object's prototype is Book, that is, the newly created object inherits the prototype of the function. It then passes the Book() function two arguments: the new object as this (as a hidden parameter) and the "901-3865" as isbn. The function, in turn, sets the object's isbn property to "901-3865" and also adds the getIsbn() method to the object. JavaScript returns the newly created object to the caller which then assigns the new object to the book variable.
+
+  Each time you invoke new Book(), a new getIsbn method is created which is a rather inefficient because the method is the same for all book instances. A better approach is to let all instances share a single method which can be accomplished by adding getIsbn to the prototype of Book rather than the Book function itself. Here is how this is done:
+
+  function Book(isbn) {
+    this.isbn = isbn;
+  }
+
+  Book.prototype.getIsbn = function () {
+    return "Isbn is " + this.isbn;
+  };
+
+  var book = new Book("901-3865");
+
+  console.log(book.getIsbn());    // => Isbn is 901-3865
+
+
 */
 
 
