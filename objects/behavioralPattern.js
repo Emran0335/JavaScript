@@ -1,6 +1,6 @@
 // behavioral pattern
 
-
+// Adaper Pattern
 // old interface
 function Shipping() {
     this.request = function(zipStart, zipEnd, weight) {
@@ -249,8 +249,7 @@ function CustomerPrototype(proto) {
     }
 }
 
-function Customer(first, last, status) {
-    t                              
+function Customer(first, last, status) {                           
 
     this.say = function() {
         console.log("name: " + this.first + " " + this.last + ", status: " + this.status)
@@ -268,3 +267,119 @@ function protoRun() {
     // customer.last;
 }
 protoRun()
+
+
+// Singleton Pattern
+
+let Singleton = (function() {
+    let instance;               // declared but undefined, so results false
+    function createInstance() {
+        let object = new Object("I am the instance");
+        return object;
+    }
+
+    return {
+        getInstance: function() {
+            if(!instance) {         // negate the false value to true
+                instance = createInstance();
+            }
+        }
+    }
+}());
+
+function singletonRun() {
+    let instance1 = Singleton.getInstance()
+    let instance2 = Singleton.getInstance()
+
+    console.log("Same instance?: " + (instance1 === instance2))         // true
+}
+
+singletonRun()
+
+// Adapter Pattern is same as the Wrapper Pattern
+
+
+// Bridge Pattern
+// input devices
+
+let Gestures = function(output) {
+    this.output = output;
+
+    this.tap = function() {
+        this.output.click();
+    }
+    this.swipe = function() {
+        this.output.move()
+    }
+    this.pan = function() {
+        this.output.drag()
+    }
+    this.pinch = function() {
+        this.output.zoom()
+    }
+}
+let Mouse = function(output) {
+    this.output = output;
+
+    this.click = function() {
+        this.output.click();
+    }
+    this.move = function() {
+        this.output.move();
+    }
+    this.down = function() {
+        this.output.drag();
+    }
+    this.wheel = function() {
+        this.output.zoom();
+    }
+}
+
+// output devices
+
+let Screen = function() {
+    this.click = function() {
+        console.log("Screen selected")
+    }
+    this.move = function() {
+        console.log("Screen moved")
+    }
+    this.drag = function() {
+        console.log("Screen dragged")
+    }
+    this.zoom = function() {
+        console.log("Screen zoom in")
+    }
+}
+let Audio = function() {
+    this.click = function() {
+        console.log("Sound oink")
+    }
+    this.move = function() {
+        console.log("Sound waves")
+    }
+    this.drag = function() {
+        console.log("Sound screetch")
+    }
+    this.zoom = function() {
+        console.log("SSound volume up")
+    }
+}
+
+function bridgeRun() {
+    let screen = new Screen();
+    let audio = new Audio();
+
+    let hand = new Gestures(screen);
+    let mouse = new Mouse(audio);
+
+    hand.tap();
+    hand.swipe();
+    hand.pinch();
+
+    mouse.click();
+    mouse.move();
+    mouse.wheel();
+}
+
+bridgeRun();
