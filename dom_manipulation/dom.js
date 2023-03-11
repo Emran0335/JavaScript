@@ -261,7 +261,7 @@ document.createElement('tagname')
 
 // To create multiple elements we should use loop. Using loop we can create as many HTML elements as we want.
 // After we create the element we can assign value to the different properties of the HTML object.
-
+/*
 ```html
 <!DOCTYPE html>
 <html>
@@ -291,6 +291,7 @@ document.createElement('tagname')
 
 // To see a created element on the HTML document we should append it to the parent as a child element. We can access the HTML document body using *document.body*. The *document.body* support the *appendChild()* method. See the example below.
 
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -314,7 +315,7 @@ document.createElement('tagname')
     </script>
 </body>
 </html>
-```
+``
 
 // ### Removing a child element from a parent node
 
